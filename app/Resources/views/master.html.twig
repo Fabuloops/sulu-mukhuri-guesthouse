@@ -7,44 +7,79 @@
 
         {% block meta %}{% endblock %}
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/mukhuri.css" />
+
         {% block style %}{% endblock %}
     </head>
     <body>
-        <header>
-            {% block header %}
-                <nav>
-                    <ul>
-                        <li><a href="{{ sulu_content_root_path() }}">Homepage</a></li>
-                        {% for item in sulu_navigation_root_tree('main') %}
-                            <li>
-                                <a href="{{ sulu_content_path(item.url) }}"
-                                   title="{{ item.title }}">{{ item.title }}</a>
+        <div class="container">
+            <header class="text-center">
+                {% block header %}
+                    <a href="{{ sulu_content_root_path() }}">
+                        <img id="logo" src="/img/logo.png" alt="logo">
+                    </a>
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ sulu_content_root_path() }}">Accueil</a>
                             </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-            {% endblock %}
-        </header>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Chambres</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Restaurant</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Activités</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
 
-        <form action="{{ path('sulu_search.website_search') }}" method="GET">
-            <input name="q" type="text" placeholder="Search" />
-            <input type="submit" value="Go" />
-        </form>
+                            {% for item in sulu_navigation_root_tree('main') %}
+                                <li class="nav-item">
+                                    <a  class="nav-link"
+                                        href="{{ sulu_content_path(item.url) }}"
+                                        title="{{ item.title }}">{{ item.title }}</a>
+                                </li>
+                            {% endfor %}
 
-        <section id="content" vocab="http://schema.org/" typeof="Content">
-            {% block content %}{% endblock %}
-        </section>
+                        </ul>
+                    </nav>
+                {% endblock %}
+            </header>
 
-        <aside>
-            {% block aside %}{% endblock %}
-        </aside>
+            {#<form action="{{ path('sulu_search.website_search') }}" method="GET">
+                <input name="q" type="text" placeholder="Search" />
+                <input type="submit" value="Go" />
+            </form>#}
 
-        <footer>
-            {% block footer %}
-                <p>Copyright {{ 'now'|date('Y') }} SULU</p>
-            {% endblock %}
-        </footer>
+            {#<section id="content" vocab="http://schema.org/" typeof="Content">
+                {% block content %}{% endblock %}
+            </section>#}
 
+            <div id="content" vocab="http://schema.org/" typeof="Content">
+                {% block content %}{% endblock %}
+            </div>
+
+            {#<aside>
+                {% block aside %}{% endblock %}
+            </aside>#}
+
+            <footer>
+                {% block footer %}
+                    <p>Copyright {{ 'now'|date('Y') }} SULU</p>
+                {% endblock %}
+            </footer>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
