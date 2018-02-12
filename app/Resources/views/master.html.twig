@@ -23,24 +23,13 @@
                     <nav>
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ sulu_content_root_path() }}">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Chambres</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Restaurant</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Activités</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Blog</a>
+                                <a  class="nav-link {{ template is defined and 'homepage' == template ? 'active' }}"
+                                    href="{{ sulu_content_root_path() }}">Accueil</a>
                             </li>
 
                             {% for item in sulu_navigation_root_tree('main') %}
                                 <li class="nav-item">
-                                    <a  class="nav-link"
+                                    <a  class="nav-link {{ uuid == item.uuid ? 'active' }}"
                                         href="{{ sulu_content_path(item.url) }}"
                                         title="{{ item.title }}">{{ item.title }}</a>
                                 </li>

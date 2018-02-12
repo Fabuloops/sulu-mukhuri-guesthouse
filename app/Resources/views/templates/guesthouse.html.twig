@@ -6,14 +6,17 @@
         "content": content|default([]),
         "urls": urls|default([]),
         "shadowBaseLocale": shadowBaseLocale|default(),
-        "defaultLocale": request.defaultLocale|default('de')
+        "defaultLocale": request.defaultLocale|default('en')
     } %}
 {% endblock %}
 
 {% block content %}
-    <h1 property="title">{{ content.title }}</h1>
-    <h2>Ouesh alors!</h2>
-    <div property="article">
-        {{ content.article|raw }}
-    </div>
+    {% for block in content.blocks %}
+        <section class="my-img-card">
+            <img src="{{ block.image[0].url }}" alt="..."/>
+            <h1>{{ block.title }}</h1>
+            {{ block.article|raw }}
+            <div class="clearfix"></div>
+        </section>
+    {% endfor %}
 {% endblock %}

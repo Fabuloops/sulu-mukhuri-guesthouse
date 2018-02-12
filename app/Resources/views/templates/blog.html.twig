@@ -1,0 +1,26 @@
+{% extends "master.html.twig" %}
+
+{% block meta %}
+    {% include "SuluWebsiteBundle:Extension:seo.html.twig" with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('en')
+    } %}
+{% endblock %}
+
+{% block content %}
+    {% for article in content.articles %}
+        {#{{ dump(article) }}#}
+        {#{{ dump(article.title) }}#}
+        {#{{ dump(article.mainImage[0].url) }}#}
+        {#{{ dump(article.seoDesc) }}#}
+        <section class="my-img-card">
+            <img src="{{ article.mainImage[0].url }}" alt="..."/>
+            <h1>{{ article.title }}</h1>
+            {{ article.seoDesc|raw }}
+            <div class="clearfix"></div>
+        </section>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "master.html.twig" %}
+
+{% block meta %}
+    {% include "SuluWebsiteBundle:Extension:seo.html.twig" with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('en')
+    } %}
+{% endblock %}
+
+{% block content %}
+    <div class="my-article" style='background-image: url("{{ content['main-image'][0].url }}")'>
+        {#{{ dump(content) }}#}
+        <div class="my-img-card">
+            <h1 property="title" class="align-center">{{ content.title }}</h1>
+        </div>
+        {% for block in content.blocks %}
+            <div class="my-img-card">
+                {% if block.image is not empty %}
+                    <img src="{{ block.image[0].url }}" alt="..."/>
+                {% endif %}
+                {% if block.title is not empty %}
+                    <h2>{{ block.title }}</h2>
+                {% endif %}
+                {{ block.article|raw }}
+                <div class="clearfix"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

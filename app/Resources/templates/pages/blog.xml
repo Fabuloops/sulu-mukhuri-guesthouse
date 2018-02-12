@@ -3,14 +3,15 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
 
-    <key>room</key>
+    <key>blog</key>
 
-    <view>templates/room</view>
+    <view>templates/blog</view>
     <controller>SuluWebsiteBundle:Default:index</controller>
     <cacheLifetime>2400</cacheLifetime>
 
     <meta>
-        <title lang="en">Room</title>
+        <title lang="en">Blog</title>
+        <title lang="fr">Blog</title>
     </meta>
 
     <properties>
@@ -19,6 +20,7 @@
                 <property name="title" type="text_line" mandatory="true">
                     <meta>
                         <title lang="en">Title</title>
+                        <title lang="fr">Titre</title>
                     </meta>
                     <params>
                         <param name="headline" value="true"/>
@@ -30,17 +32,27 @@
                 <property name="url" type="resource_locator" mandatory="true">
                     <meta>
                         <title lang="en">Resourcelocator</title>
+                        <title lang="fr">URL</title>
                     </meta>
 
                     <tag name="sulu.rlp"/>
                 </property>
             </properties>
         </section>
-
-        <property name="article" type="text_editor">
+        <property name="articles" type="smart_content">
             <meta>
-                <title lang="en">Article</title>
+                <title lang="en">Articles</title>
+                <title lang="fr">Articles</title>
             </meta>
+            <params>
+                <param name="provider" value="content"/>
+                <param name="max_per_page" value="5"/>
+                <param name="page_parameter" value="p"/>
+                <param name="properties" type="collection">
+                    <param name="mainImage" value="main-image"/>
+                    <param name="seoDesc" value="seo.description"/>
+                </param>
+            </params>
         </property>
     </properties>
 </template>

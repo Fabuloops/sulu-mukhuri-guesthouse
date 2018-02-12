@@ -11,7 +11,6 @@
 
     <meta>
         <title lang="en">Homepage</title>
-        <title lang="de">Startseite</title>
         <title lang="fr">Accueil</title>
     </meta>
 
@@ -21,7 +20,6 @@
                 <property name="title" type="text_line" mandatory="true">
                     <meta>
                         <title lang="en">Title</title>
-                        <title lang="de">Titel</title>
                         <title lang="fr">Titre</title>
                     </meta>
                     <params>
@@ -31,10 +29,10 @@
                     <tag name="sulu.rlp.part"/>
                 </property>
 
-                <property name="url" type="resource_locator" mandatory="true">
+                <property name="url" type="resource_locator">
                     <meta>
                         <title lang="en">Resourcelocator</title>
-                        <title lang="de">Adresse</title>
+                        <title lang="fr">URL</title>
                     </meta>
 
                     <tag name="sulu.rlp"/>
@@ -42,11 +40,19 @@
             </properties>
         </section>
 
-        <property name="article" type="text_editor">
+        <property name="presentation" type="text_editor">
             <meta>
-                <title lang="en">Article</title>
-                <title lang="de">Artikel</title>
+                <title lang="en">Presentation</title>
+                <title lang="de">Présentation</title>
             </meta>
         </property>
+
+        <!--<property name="home-caroussel" type="imageGallery" mandatory="true">
+            <meta>
+                <title lang="en">Image Gallery</title>
+                <title lang="fr">Galerie d'image</title>
+            </meta>
+        </property>-->
+
     </properties>
 </template>

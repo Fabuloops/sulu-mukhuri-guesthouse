@@ -11,10 +11,6 @@
 {% endblock %}
 
 {% block content %}
-    {#<h1 property="title">{{ content.title }}</h1>
-    <div property="article">
-        {{ content.article|raw }}
-    </div>#}
 
     <section>
         <div id="home-slide" class="carousel slide" data-ride="carousel">
@@ -40,48 +36,8 @@
         </div>
     </section>
     <section>
-        <div class="row">
-            <div class="col-6">
-                <img src="/img/guesthouse/rooms.jpg" alt="Rooms"/>
-            </div>
-            <div class="col-6">
-                <div class="section-desc">
-                    <h1>Les Chambres</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae scelerisque tellus, sed tristique quam. Etiam leo massa, volutpat sed tincidunt ac, blandit ac eros.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="row">
-            <div class="col-6">
-                <div class="section-desc">
-                    <h1>Le Restaurant</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae scelerisque tellus, sed tristique quam. Etiam leo massa, volutpat sed tincidunt ac, blandit ac eros.
-                    </p>
-                </div>
-            </div>
-            <div class="col-6">
-                <img src="/img/guesthouse/lunch.jpg" alt="Lunch"/>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="row">
-            <div class="col-6">
-                <img src="/img/tobavarchkhili/trek.jpg" alt="Tobavarchkhili"/>
-            </div>
-            <div class="col-6">
-                <div class="section-desc">
-                    <h1>Les Activités</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae scelerisque tellus, sed tristique quam. Etiam leo massa, volutpat sed tincidunt ac, blandit ac eros.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <p property="presentation">
+            {{ content.presentation|raw }}
+        </p>
     </section>
 {% endblock %}
