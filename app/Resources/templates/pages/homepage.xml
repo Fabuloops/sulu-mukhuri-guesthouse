@@ -47,12 +47,18 @@
             </meta>
         </property>
 
-        <!--<property name="home-caroussel" type="imageGallery" mandatory="true">
+        <property name="slides" type="teaser_selection">
             <meta>
-                <title lang="en">Image Gallery</title>
-                <title lang="fr">Galerie d'image</title>
+                <title lang="en">Articles</title>
+                <title lang="fr">Articles</title>
             </meta>
-        </property>-->
+            <params>
+                <param name="properties" type="collection">
+                    <param name="mainImage" value="main-image"/>
+                    <param name="seoDesc" value="seo.description"/>
+                </param>
+            </params>
+        </property>
 
     </properties>
 </template>
