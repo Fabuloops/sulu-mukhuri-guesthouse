@@ -35,6 +35,18 @@
                                 </li>
                             {% endfor %}
 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ request.locale }}</a>
+                                <div class="dropdown-menu">
+                                    {% for key, value in urls if key != request.locale %}
+                                        {% set itemUrl = sulu_content_path(value, request.webspaceKey, key)|default('') %}
+                                        {% if itemUrl is not empty %}
+                                            <a class="dropdown-item" href="{{ itemUrl }}">{{ key }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </li>
+
                         </ul>
                     </nav>
                 {% endblock %}
