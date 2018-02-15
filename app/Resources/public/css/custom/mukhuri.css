@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    /*background-color: #dcdcdc;*/
+    background-color: #f5f4ea;
+}
+
+body > .container {
+    background-color: #fff;
+}
+
+header>nav {
+    font-size: 2rem;
+}
+
+a, a:hover, a:visited, a:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+h1, h2, a.nav-link {
+    font-family: 'Amatic SC', cursive;
+}
+
+img {
+    width: 100%;
+}
+
+#logo {
+    width: auto;
+    max-height: 20em;
+}
+
+header nav ul.nav {
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.carousel-item {
+    max-height: 350px;
+}
+
+.carousel-caption {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-bottom: 0;
+}
+
+.carousel-caption h1 {
+    color: white;
+}
+
+/*
+margin : vertical | horizontal
+margin : haut | droit | bas | gauche
+*/
+
+.my-img-card {
+    padding: 2%;
+    margin: 2%;
+    /*background-color: #dcdcdc;*/
+    background-color: #f5f4ea;
+}
+
+.my-img-card img {
+    width: 50%;
+    vertical-align: top;
+}
+
+.my-img-card:nth-child(even) img {
+    margin: 0 4% 1% 0;
+    float: left;
+}
+
+.my-img-card:nth-child(odd) img {
+    margin: 0 0 1% 4%;
+    float: right;
+}
+
+
+@media screen and (max-width: 400px) {
+    .my-img-card img {
+        width: 100%;
+    }
+}
+
+/*
+my-article
+*/
+.my-article {
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 30%;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.my-article h1 {
+    text-align: center;
+    margin : 5% auto;
+    background-color: #f5f4ea;
+}
+
+.my-article .my-img-card {
+    margin: 0;
+    padding: 1% 12%;
+
+}
+
+.my-article .my-img-card p {
+    font-size: large;
+}
+
+/*
+my-blog-list
+*/
