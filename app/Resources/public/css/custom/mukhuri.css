@@ -33,10 +33,12 @@ img {
     width: 100%;
 }
 
-#logo {
+.logo {
     width: auto;
     max-height: 20em;
 }
+
+
 
 header nav ul.nav {
     justify-content: space-evenly;
@@ -58,6 +60,10 @@ header nav ul.nav {
 
 .carousel-caption h1 {
     color: white;
+}
+
+#homepage_presentation {
+    padding: 5% 10%;
 }
 
 /*
@@ -124,3 +130,35 @@ my-article
 /*
 my-blog-list
 */
+
+.button-socicon {
+    text-align: center;
+    padding: 5px 9px;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 1em;
+}
+
+footer {
+    text-align: center;
+}
+
+footer hr {
+    margin: 3%;
+}
+
+footer .col:first-child {
+    text-align: right;
+}
+
+footer .col:last-child {
+    text-align: left;
+}
+
+footer .logo {
+    width: 70%;
+}
+
+footer nav ul.nav {
+    justify-content: space-around;
+}

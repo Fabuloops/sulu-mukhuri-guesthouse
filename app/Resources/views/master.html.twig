@@ -9,6 +9,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="/assets/css/lib/bootstrap.min.css">
+        <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh">
         <link rel="stylesheet" href="/assets/css/custom/mukhuri.css" />
 
         {% block style %}{% endblock %}
@@ -18,7 +19,7 @@
             <header class="text-center">
                 {% block header %}
                     <a href="{{ sulu_content_root_path() }}">
-                        <img id="logo" src="/assets/img/logo.png" alt="logo">
+                        <img class="logo" src="/assets/img/logo.png" alt="logo">
                     </a>
                     <nav>
                         <ul class="nav">
@@ -71,7 +72,50 @@
 
             <footer>
                 {% block footer %}
-                    <p>Copyright {{ 'now'|date('Y') }} SULU</p>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <a href="{{ sulu_content_root_path() }}">
+                                <img class="logo" src="/assets/img/logo_text.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <nav>
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a  class="nav-link {{ template is defined and 'homepage' == template ? 'active' }}"
+                                            href="{{ sulu_content_root_path() }}">Accueil</a>
+                                    </li>
+
+                                    {% for item in sulu_navigation_root_tree('main') %}
+                                        <li class="nav-item">
+                                            <a  class="nav-link {{ uuid == item.uuid ? 'active' }}"
+                                                href="{{ sulu_content_path(item.url) }}"
+                                                title="{{ item.title }}">{{ item.title }}</a>
+                                        </li>
+                                    {% endfor %}
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ request.locale }}</a>
+                                        <div class="dropdown-menu">
+                                            {% for key, value in urls if key != request.locale %}
+                                                {% set itemUrl = sulu_content_path(value, request.webspaceKey, key)|default('') %}
+                                                {% if itemUrl is not empty %}
+                                                    <a class="dropdown-item" href="{{ itemUrl }}">{{ key }}</a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.facebook.com/pg/MukhuriGuesthouse" class="pure-button button-socicon"><span class="socicon socicon-facebook"></span></a>
+                            <a href="https://www.instagram.com/mukhuri.guesthouse" class="pure-button button-socicon"><span class="socicon socicon-instagram"></span></a>
+                            <a href="#" class="pure-button button-socicon"><span class="socicon socicon-tripadvisor"></span></a>
+                        </div>
+                    </div>
+                    <p>Copyright {{ 'now'|date('Y') }} Mukhuri-Guesthouse</p>
                 {% endblock %}
             </footer>
         </div>
