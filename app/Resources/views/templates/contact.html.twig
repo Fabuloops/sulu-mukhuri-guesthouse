@@ -12,12 +12,17 @@
 
 {% block content %}
     {% if app.request.get('send') == 'true' %}
-        {{ view.contact_form.entity.successText|raw }}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ view.contact_form.entity.successText|raw }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     {% endif %}
-    
+
     <div id="contact-section" class="row">
         <div class="col-sm">
-            <h1>Contactez nous</h1>
+            <h1>{{ content.title }}</h1>
             <div class="row">
                 <div class="col">
                     <i class="fas fa-phone"></i>
