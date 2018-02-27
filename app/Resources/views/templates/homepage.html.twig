@@ -24,7 +24,7 @@
                         <div class="carousel-item {{ loop.first ? 'active' }}">
                             <img data-speed="1" class="img-parallax d-block w-100" src="{{ image.formats['1110x350'] }}" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <a href="{{ slide.url }}">
+                                <a href="{{ sulu_content_path(slide.url) }}">
                                     <h1>{{ slide.title }}</h1>
                                 </a>
                                 {{ slide.description|raw }}

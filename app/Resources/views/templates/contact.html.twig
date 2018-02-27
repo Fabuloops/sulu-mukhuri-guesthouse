@@ -1,0 +1,52 @@
+{% extends "master.html.twig" %}
+
+{% block meta %}
+    {% include "SuluWebsiteBundle:Extension:seo.html.twig" with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('en')
+    } %}
+{% endblock %}
+
+{% block content %}
+    {% if app.request.get('send') == 'true' %}
+        {{ view.contact_form.entity.successText|raw }}
+    {% endif %}
+    
+    <div id="contact-section" class="row">
+        <div class="col-sm">
+            <h1>Contactez nous</h1>
+            <div class="row">
+                <div class="col">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="col-10">
+                    <p>{{ content.contact_phone }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="col-10">
+                    <p>{{ content.contact_email }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <i class="fas fa-map-marker"></i>
+                </div>
+                <div class="col-10">
+                    {{ content.contact_address|raw }}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            {# FORM THEME #}
+            {% form_theme content.contact_form 'SuluFormBundle:themes:dynamic.html.twig' %}
+            {{ form(content.contact_form) }}
+        </div>
+    </div>
+{% endblock %}

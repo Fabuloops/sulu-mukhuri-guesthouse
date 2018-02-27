@@ -8,7 +8,7 @@ parameters:
     locale: en
 
 framework:
-    #esi:             ~
+    esi:             ~
     translator: { fallbacks: ["%locale%"] }
     secret: "%secret%"
     router:
@@ -131,6 +131,11 @@ sulu_media:
     storage:
         local:
             path: "%kernel.var_dir%/uploads/media"
+
+sulu_form:
+    mail:
+        from: "%sulu_contact.email%"
+        to:   "%sulu_contact.email%"
 
 dubture_f_fmpeg:
     ffmpeg_binary: /usr/local/bin/ffmpeg # path to ffmpeg

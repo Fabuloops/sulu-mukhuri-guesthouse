@@ -100,3 +100,8 @@ sulu_route_api:
 sulu_search:
     resource: "@SuluSearchBundle/Resources/config/routing.yml"
     prefix: /admin/search
+
+sulu_form_api:
+    type: rest
+    resource: "@SuluFormBundle/Resources/config/routing_api.yml"
+    prefix: /admin/api

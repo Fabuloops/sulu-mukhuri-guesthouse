@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "05664ff3b1e1ea6777e1f4ea6e289bdc",
+    "content-hash": "036819076bdb22f336b46050d61f6da0",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3640,12 +3640,12 @@
             "version": "3.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/piwik/device-detector.git",
+                "url": "https://github.com/matomo-org/device-detector.git",
                 "reference": "caf2d15349caffd94a8cfe46edf4061fbc99f70b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/piwik/device-detector/zipball/caf2d15349caffd94a8cfe46edf4061fbc99f70b",
+                "url": "https://api.github.com/repos/matomo-org/device-detector/zipball/caf2d15349caffd94a8cfe46edf4061fbc99f70b",
                 "reference": "caf2d15349caffd94a8cfe46edf4061fbc99f70b",
                 "shasum": ""
             },
@@ -4687,6 +4687,71 @@
                 "sulu"
             ],
             "time": "2018-01-18T13:05:57+00:00"
+        },
+        {
+            "name": "sulu/sulu-form-bundle",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sulu/SuluFormBundle.git",
+                "reference": "ca83882e603d15d9077eb15ad1d8ef1b15e447d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sulu/SuluFormBundle/zipball/ca83882e603d15d9077eb15ad1d8ef1b15e447d1",
+                "reference": "ca83882e603d15d9077eb15ad1d8ef1b15e447d1",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.5.3",
+                "php": "^5.5 || ^7.0",
+                "sulu/sulu": "~1.3",
+                "symfony/swiftmailer-bundle": "^2.3 || ^3.0",
+                "symfony/symfony": "^2.8.7 || ^3.0"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^1.4",
+                "drewm/mailchimp-api": "^2.2",
+                "excelwebzone/recaptcha-bundle": "^1.4.2",
+                "jackalope/jackalope-doctrine-dbal": "^1.2.5",
+                "massive/search-bundle": "@dev",
+                "phpunit/phpunit": ">=4.8, <6.0",
+                "symfony/monolog-bundle": "^2.8.7 || ^3.0",
+                "zendframework/zend-stdlib": "~2.3",
+                "zendframework/zendsearch": "@dev"
+            },
+            "suggest": {
+                "drewm/mailchimp-api": "Allows to add a newsletter subscription over mailchimp to any dynamic form",
+                "excelwebzone/recaptcha-bundle": "Allows to add recaptcha to any dynamic form"
+            },
+            "type": "sulu-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Sulu\\Bundle\\FormBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sulu Form Contributors",
+                    "homepage": "https://github.com/sulu/SuluFormBundle/contributors"
+                }
+            ],
+            "description": "Bundle for creating forms in Sulu.",
+            "homepage": "https://github.com/sulu/SuluFormBundle",
+            "keywords": [
+                "dynamic",
+                "form",
+                "form manager",
+                "sulu"
+            ],
+            "time": "2017-12-01T14:00:03+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

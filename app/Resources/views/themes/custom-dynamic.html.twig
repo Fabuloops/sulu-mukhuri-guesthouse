@@ -1,0 +1,8 @@
+{% extends 'SuluFormBundle:themes:dynamic.html.twig' %}
+
+{# Custom grid class #}
+{%- block sulu_form_row_class_name -%}
+    {{- parent() -}}
+    &nbsp;
+    form-group
+{%- endblock sulu_form_row_class_name -%}

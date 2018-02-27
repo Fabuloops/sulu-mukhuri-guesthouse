@@ -20,6 +20,9 @@ parameters:
     sulu_admin.name:    Sulu
     sulu_admin.email:   ~
 
+    sulu_contact.name:    'Sulu Contact'
+    sulu_contact.email:   ~
+
     websocket_port: 9876
     websocket_url: 'sulu.lo'
 
