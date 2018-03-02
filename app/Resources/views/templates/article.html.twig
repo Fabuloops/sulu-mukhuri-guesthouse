@@ -11,15 +11,15 @@
 {% endblock %}
 
 {% block content %}
-    <div class="my-article" style='background-image: url("{{ content['main-image'][0].url }}")'>
-        {#{{ dump(content) }}#}
+    <div class="my-article">
+        <img src="{{ content['main-image'][0].formats['1110x350'] }}" class="zoomImg" data-zoom-url="{{ content['main-image'][0].url }}">
         <div class="my-img-card">
             <h1 property="title" class="align-center">{{ content.title }}</h1>
         </div>
         {% for block in content.blocks %}
             <div class="my-img-card">
                 {% if block.image is not empty %}
-                    <img src="{{ block.image[0].url }}" alt="..."/>
+                    <img src="{{ block.image[0].url }}" class="zoomImg" data-zoom-url="{{ block.image[0].url }}" alt="..."/>
                 {% endif %}
                 {% if block.title is not empty %}
                     <h2>{{ block.title }}</h2>
@@ -29,4 +29,29 @@
             </div>
         {% endfor %}
     </div>
+
+    <!-- Modal Image -->
+    <div class="modal fade" id="modalImg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="zoomModalImg" src="#" data-dismiss="modal">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $( document ).ready(function() {
+            $('.zoomImg').click(function() {
+                var urlImg = $(this).data('zoomUrl');
+                if (urlImg) {
+                    $('#zoomModalImg').attr('src', urlImg);
+                    $('#modalImg').modal('toggle');
+                }
+            })
+        });
+    </script>
 {% endblock %}
