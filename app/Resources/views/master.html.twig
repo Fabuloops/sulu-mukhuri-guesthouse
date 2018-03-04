@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="/assets/css/lib/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/css/lib/fontawesome-all.css" />
         <link rel="stylesheet" href="/assets/css/custom/mukhuri.css" />
+        <link rel="stylesheet" href="/assets/css/custom/responsive.css" />
 
         {% block style %}{% endblock %}
     </head>
@@ -18,40 +19,45 @@
         <div class="container">
             <header class="text-center">
                 {% block header %}
-                    <a href="{{ sulu_content_root_path() }}">
+                    <a href="{{ sulu_content_root_path() }}" class="d-none d-sm-block">
                         <img class="logo" src="/assets/img/logo.png" alt="logo">
                     </a>
-                    <nav id="mainNavigation">
-                        <ul class="nav">
-                            <li class="nav-item" style="display: none;">
-                                <a  class="nav-link {{ template is defined and 'homepage' == template ? 'active' }}"
-                                    href="{{ sulu_content_root_path() }}">
-                                    <img class="logo" src="/assets/img/logo_text.png" alt="logo">
-                                </a>
-                            </li>
+                    <nav id="mainNavigation" class="navbar navbar-expand-sm navbar-light">
+                        <a  class="navbar-brand d-sm-none"
+                            href="{{ sulu_content_root_path() }}">
+                            <img class="logo" src="/assets/img/logo_text.png" alt="logo">
+                        </a>
 
-                            {% for item in sulu_navigation_root_tree('main') %}
-                                <li class="nav-item">
-                                    <a  class="nav-link {{ uuid == item.uuid ? 'active' }}"
-                                        href="{{ sulu_content_path(item.url) }}"
-                                        title="{{ item.title }}">{{ item.title }}</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+
+                                {% for item in sulu_navigation_root_tree('main') %}
+                                    <li class="nav-item">
+                                        <a  class="nav-link {{ uuid == item.uuid ? 'active' }}"
+                                            href="{{ sulu_content_path(item.url) }}"
+                                            title="{{ item.title }}">{{ item.title }}</a>
+                                    </li>
+                                {% endfor %}
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ request.locale }}</a>
+                                    <div class="dropdown-menu">
+                                        {% for key, value in urls if key != request.locale %}
+                                            {% set itemUrl = sulu_content_path(value, request.webspaceKey, key)|default('') %}
+                                            {% if itemUrl is not empty %}
+                                                <a class="dropdown-item" href="{{ itemUrl }}">{{ key|upper }}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
                                 </li>
-                            {% endfor %}
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ request.locale }}</a>
-                                <div class="dropdown-menu">
-                                    {% for key, value in urls if key != request.locale %}
-                                        {% set itemUrl = sulu_content_path(value, request.webspaceKey, key)|default('') %}
-                                        {% if itemUrl is not empty %}
-                                            <a class="dropdown-item" href="{{ itemUrl }}">{{ key|upper }}</a>
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
-                            </li>
-
-                        </ul>
+                            </ul>
+                        </div>
                     </nav>
+
                 {% endblock %}
             </header>
 
@@ -131,10 +137,8 @@
             function myFunction() {
                 if (window.pageYOffset >= sticky) {
                     navbar.classList.add("sticky");
-                    $('nav .nav-item:first-child').show();
                 } else {
                     navbar.classList.remove("sticky");
-                    $('nav .nav-item:first-child').hide();
                 }
             }
         </script>
