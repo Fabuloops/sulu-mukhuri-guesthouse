@@ -29,6 +29,8 @@ parameters:
     # phpcr_backend:
     #        type: jackrabbit
     #        url: http://localhost:8080/server/
+    #        logging: true
+    #        profiling: true
     phpcr_backend:
         type: doctrinedbal
     phpcr_workspace: default

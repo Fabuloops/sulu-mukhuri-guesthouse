@@ -41,17 +41,3 @@
         </div>
     </div>
 {% endblock %}
-
-{% block javascripts %}
-    <script>
-        $( document ).ready(function() {
-            $('.zoomImg').click(function() {
-                var urlImg = $(this).data('zoomUrl');
-                if (urlImg) {
-                    $('#zoomModalImg').attr('src', urlImg);
-                    $('#modalImg').modal('toggle');
-                }
-            })
-        });
-    </script>
-{% endblock %}

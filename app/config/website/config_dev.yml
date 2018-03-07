@@ -11,12 +11,19 @@ web_profiler:
     toolbar: true
     intercept_redirects: false
 
+# level : debug, info, notice, warning, error, critical, alert, emergency
 monolog:
     handlers:
         main:
             type:   stream
             path:   "%kernel.logs_dir%/%kernel.environment%.log"
+            level:  notice
+            channels: ["!doctrine"]
+        doctrine:
+            type:   stream
+            path:   "%kernel.logs_dir%/%kernel.environment%_doctrine.log"
             level:  debug
+            channels: ["doctrine"]
         console:
             type:   console
             bubble: false
