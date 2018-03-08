@@ -2,23 +2,42 @@
 // MENU STICKY
 //
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {stickyFunc()};
+$( window ).scroll(function() {
+    stickyHandler();
+});
 
-// Get the navbar
-var navbar = document.getElementById("mainNavigation");
+$( window ).resize(function() {
+    removeSticky();
+});
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
+if ($(window).width() < 600) {
+    addSticky();
+}
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickyFunc() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-        $('.navbar-brand').removeClass('d-sm-none');
+var offsetNavBar = $('#mainNavigation').offset();
+
+function stickyHandler() {
+    if ($(window).scrollTop() >= (offsetNavBar.top + 50)) {
+        addSticky();
     } else {
-        navbar.classList.remove("sticky");
+        removeSticky();
+    }
+}
+
+function addSticky() {
+    if (!$('#mainNavigation').hasClass('sticky')) {
+        $('#mainNavigation').addClass('sticky');
+        $('.navbar-brand').removeClass('d-sm-none');
+        $('#content').addClass('m-top-50');
+    }
+}
+
+function removeSticky() {
+    if ($('#mainNavigation').hasClass('sticky')) {
+        $('#mainNavigation').removeClass('sticky');
         $('.navbar-brand').addClass('d-sm-none');
+        $('#content').removeClass('m-top-50');
+        offsetNavBar = $('#mainNavigation').offset();
     }
 }
 

@@ -20,35 +20,35 @@
         </div>
     {% endif %}
 
-    <div id="contact-section" class="row">
-        <div class="col-sm">
+    <div id="contact-section" class="row text-left">
+        <div class="col-md">
             <h1>{{ content.title }}</h1>
             <div class="row">
-                <div class="col">
+                <div class="col-sm d-none d-sm-block">
                     <i class="fas fa-phone"></i>
                 </div>
-                <div class="col-10">
+                <div class="col-sm-10">
                     <p>{{ content.contact_phone }}</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-sm d-none d-sm-block">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <div class="col-10">
+                <div class="col-sm-10">
                     <p>{{ content.contact_email }}</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-sm d-none d-sm-block">
                     <i class="fas fa-map-marker"></i>
                 </div>
-                <div class="col-10">
+                <div class="col-sm-10">
                     {{ content.contact_address|raw }}
                 </div>
             </div>
         </div>
-        <div class="col-sm">
+        <div class="col-md">
             {# FORM THEME #}
             {% form_theme content.contact_form 'SuluFormBundle:themes:dynamic.html.twig' %}
             {{ form(content.contact_form) }}

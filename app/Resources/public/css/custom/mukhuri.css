@@ -163,12 +163,15 @@ my-blog-list
     font-size: 2em;
 }
 
-.button-socicon svg {
-    height: 1em;
-    width: 1em;
-    fill: #000;
+.button-socicon i {
+    padding: 10px;
 }
 
+.button-socicon i:hover {
+    color: white;
+    background-color: grey;
+    border-radius: 50%;
+}
 
 footer {
     text-align: center;
@@ -178,14 +181,6 @@ footer {
 
 footer hr {
     margin: 3%;
-}
-
-footer .col:first-child {
-    text-align: right;
-}
-
-footer .col:last-child {
-    text-align: left;
 }
 
 footer .logo {
@@ -241,7 +236,8 @@ footer nav ul.nav {
     max-width: 1000px;
     max-height: 600px;
 }
-/*------------------------------------*\
-            RESPONSIVE
-\*-------------------------------------*/
+
+.m-top-50 {
+    margin-top: 50px;
+}
 

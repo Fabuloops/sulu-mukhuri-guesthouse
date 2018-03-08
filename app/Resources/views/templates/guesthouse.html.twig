@@ -13,7 +13,7 @@
 {% block content %}
     {% for block in content.blocks %}
         <section class="my-img-card">
-            <img src="{{ block.image[0].url }}" alt="..."/>
+            <img src="{{ block.image[0].url }}" class="zoomImg" data-zoom-url="{{ block.image[0].url }}" alt="..."/>
             <h1>{{ block.title }}</h1>
             {{ block.article|raw }}
             <div class="clearfix"></div>
