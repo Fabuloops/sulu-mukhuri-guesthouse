@@ -1,2 +1,17 @@
-@media only screen and (min-width: 760px) {
+@media only screen and (max-width: 760px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .button-socicon {
+        font-size: 1rem;
+    }
 }

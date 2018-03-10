@@ -1,0 +1,34 @@
+{% extends "master.html.twig" %}
+
+{% block meta %}
+    {% include "SuluWebsiteBundle:Extension:seo.html.twig" with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('en')
+    } %}
+{% endblock %}
+
+{% block content %}
+    <div class="about-us">
+        <h1 property="title" class="align-center">{{ content.main_title }}</h1>
+        {% for block in content.blocks %}
+            <div class="row">
+                {% if block.image is not empty %}
+                    <div class="col-3 d-none d-sm-flex Aligner">
+                        <div class="profil-picture Aligner-item">
+                            <img src="{{ block.image[0].formats['103x128'] }}" alt="..."/>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="col">
+                    {% if block.title is not empty %}
+                        <h2>{{ block.title }}</h2>
+                    {% endif %}
+                    {{ block.article|raw }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
