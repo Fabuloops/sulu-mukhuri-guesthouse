@@ -119,6 +119,8 @@ sulu_websocket:
 sulu_website:
     sitemap:
         dump_dir: "%kernel.var_dir%/sitemaps"
+    default_locale:
+        provider_service_id: sulu_website.default_locale.request_provider
 
 # SuluHttpCache Configuration
 sulu_http_cache:
