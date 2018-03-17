@@ -1,7 +1,9 @@
 {% extends "master.html.twig" %}
 
 {% block content %}
-    <h1>Resource not found</h1>
-
-    <p>The path "<em>{{ request.resourceLocator }}</em>" does not exist.</p>
+    <div class="notfound-404">
+        <img src="/assets/img/404_not_found.jpg" alt="404-not-found">
+        <h1>Resource not found</h1>
+        <p>The path "<em>{{ request.resourceLocator }}</em>" does not exist.</p>
+    </div>
 {% endblock %}
