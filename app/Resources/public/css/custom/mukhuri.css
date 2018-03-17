@@ -296,11 +296,10 @@ CONTACT
 }
 
 .notfound-404 {
-    background-color: #F2F2F2;
     text-align: center;
     padding: 4%;
 }
 
 .notfound-404 img {
-    width: 30%;
+    max-width: 30%;
 }
