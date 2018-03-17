@@ -9,12 +9,12 @@
         </meta>
         <scale x="1110" y="350"/>
     </format>
-    <format key="103x128">
+    <format key="140x174">
         <meta>
             <title lang="en">Profil Picture</title>
             <title lang="fr">Image de profil</title>
         </meta>
-        <scale x="103" y="128"/>
+        <scale x="140" y="174"/>
     </format>
     <format key="640x480">
         <meta>
