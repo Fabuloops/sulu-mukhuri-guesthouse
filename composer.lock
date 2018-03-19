@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "036819076bdb22f336b46050d61f6da0",
+    "content-hash": "fb6a84b9187c798910b327d0c6f17928",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1322,6 +1322,54 @@
             "time": "2017-07-17T17:39:19+00:00"
         },
         {
+            "name": "excelwebzone/recaptcha-bundle",
+            "version": "v1.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/excelwebzone/EWZRecaptchaBundle.git",
+                "reference": "ae542b3b5170646b8360d3437231ca1208195ea8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/excelwebzone/EWZRecaptchaBundle/zipball/ae542b3b5170646b8360d3437231ca1208195ea8",
+                "reference": "ae542b3b5170646b8360d3437231ca1208195ea8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6 || ^7.0",
+                "symfony/form": "^2.8 || ^3.0 || ^4.0",
+                "symfony/framework-bundle": "^2.8 || ^3.0 || ^4.0",
+                "symfony/security": "^2.8 || ^3.0 || ^4.0",
+                "symfony/validator": "^2.8 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "EWZ\\Bundle\\RecaptchaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael H. Arieli",
+                    "email": "excelwebzone@gmail.com",
+                    "homepage": "http://excelwebzone.com/"
+                }
+            ],
+            "description": "This bundle provides easy reCAPTCHA form field integration",
+            "homepage": "https://github.com/excelwebzone/EWZRecaptchaBundle",
+            "keywords": [
+                "recaptcha"
+            ],
+            "time": "2018-02-23T16:48:41+00:00"
+        },
+        {
             "name": "fig/link-util",
             "version": "1.0.0",
             "source": {
@@ -1377,16 +1425,16 @@
         },
         {
             "name": "friendsofsymfony/http-cache",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCache.git",
-                "reference": "e528b0fb046d3f329b10951201a5b0cab60e96e1"
+                "reference": "c60c5e99b32671e4e4bdd1a3403fb216badb015b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/e528b0fb046d3f329b10951201a5b0cab60e96e1",
-                "reference": "e528b0fb046d3f329b10951201a5b0cab60e96e1",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCache/zipball/c60c5e99b32671e4e4bdd1a3403fb216badb015b",
+                "reference": "c60c5e99b32671e4e4bdd1a3403fb216badb015b",
                 "shasum": ""
             },
             "require": {
@@ -1394,6 +1442,9 @@
                 "php": ">=5.3.3",
                 "symfony/event-dispatcher": "^2.3||^3.0",
                 "symfony/options-resolver": "^2.3||^3.0"
+            },
+            "conflict": {
+                "symfony/http-foundation": ">=4.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9.1",
@@ -1445,7 +1496,7 @@
                 "purge",
                 "varnish"
             ],
-            "time": "2017-10-09T11:34:53+00:00"
+            "time": "2018-03-17T13:40:18+00:00"
         },
         {
             "name": "friendsofsymfony/rest-bundle",
@@ -2530,16 +2581,16 @@
         },
         {
             "name": "layershifter/tld-database",
-            "version": "1.0.54",
+            "version": "1.0.56",
             "source": {
                 "type": "git",
                 "url": "https://github.com/layershifter/TLDDatabase.git",
-                "reference": "b1050b811532cffec44715bb27a0001ba4e6c5ba"
+                "reference": "5798fa9a29a013f0ca4ef391d081639007b0c6ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/layershifter/TLDDatabase/zipball/b1050b811532cffec44715bb27a0001ba4e6c5ba",
-                "reference": "b1050b811532cffec44715bb27a0001ba4e6c5ba",
+                "url": "https://api.github.com/repos/layershifter/TLDDatabase/zipball/5798fa9a29a013f0ca4ef391d081639007b0c6ae",
+                "reference": "5798fa9a29a013f0ca4ef391d081639007b0c6ae",
                 "shasum": ""
             },
             "require": {
@@ -2577,7 +2628,7 @@
                 "domain database",
                 "tld database"
             ],
-            "time": "2018-02-25T12:56:28+00:00"
+            "time": "2018-03-17T22:10:15+00:00"
         },
         {
             "name": "layershifter/tld-extract",
@@ -4519,16 +4570,16 @@
         },
         {
             "name": "sulu/document-manager",
-            "version": "0.10.0",
+            "version": "0.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sulu/sulu-document-manager.git",
-                "reference": "ba61b49f1752338caa465fdaaddd4d9a81943331"
+                "reference": "a312dca06dfaf34b14405ce1c4465c07c7d30f26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sulu/sulu-document-manager/zipball/ba61b49f1752338caa465fdaaddd4d9a81943331",
-                "reference": "ba61b49f1752338caa465fdaaddd4d9a81943331",
+                "url": "https://api.github.com/repos/sulu/sulu-document-manager/zipball/a312dca06dfaf34b14405ce1c4465c07c7d30f26",
+                "reference": "a312dca06dfaf34b14405ce1c4465c07c7d30f26",
                 "shasum": ""
             },
             "require": {
@@ -4564,20 +4615,20 @@
                 }
             ],
             "description": "Sulu Document Manager",
-            "time": "2017-06-28T08:17:47+00:00"
+            "time": "2018-03-19T07:00:16+00:00"
         },
         {
             "name": "sulu/sulu",
-            "version": "1.6.15",
+            "version": "1.6.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sulu/sulu.git",
-                "reference": "eb3b4fa758de7c824ff4204e65086440dfad236e"
+                "reference": "afc1c221218fb12db2a1cce1c81c5a397b98a169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sulu/sulu/zipball/eb3b4fa758de7c824ff4204e65086440dfad236e",
-                "reference": "eb3b4fa758de7c824ff4204e65086440dfad236e",
+                "url": "https://api.github.com/repos/sulu/sulu/zipball/afc1c221218fb12db2a1cce1c81c5a397b98a169",
+                "reference": "afc1c221218fb12db2a1cce1c81c5a397b98a169",
                 "shasum": ""
             },
             "require": {
@@ -4604,9 +4655,10 @@
                 "piwik/device-detector": "^3.7",
                 "pulse00/ffmpeg-bundle": "^0.6",
                 "ramsey/uuid": "^3.1",
+                "sensio/distribution-bundle": "~5.0.6",
                 "sensio/framework-extra-bundle": "^3.0",
                 "stof/doctrine-extensions-bundle": "^1.2.2",
-                "sulu/document-manager": "~0.10.0",
+                "sulu/document-manager": "~0.10.1",
                 "symfony-cmf/routing-bundle": "^1.2 || ^2.0",
                 "symfony/swiftmailer-bundle": "~2.3",
                 "symfony/symfony": "^2.8.7 || ^3.0",
@@ -4615,7 +4667,7 @@
             },
             "conflict": {
                 "jackalope/jackalope": "1.2.8 || 1.3.0 || 1.3.1",
-                "phpcr/phpcr-utils": "1.2.1 - 1.2.10 || 1.3.1 || 1.3.2",
+                "phpcr/phpcr-utils": "1.2.0 - 1.2.10 || 1.3.0 - 1.3.2",
                 "symfony/monolog-bundle": "2.8.10",
                 "symfony/phpunit-bridge": "2.8.10",
                 "symfony/symfony": "2.8.10"
@@ -4686,7 +4738,7 @@
                 "core",
                 "sulu"
             ],
-            "time": "2018-02-27T10:02:26+00:00"
+            "time": "2018-03-19T08:35:35+00:00"
         },
         {
             "name": "sulu/sulu-form-bundle",
@@ -6229,7 +6281,7 @@
                 "lucene",
                 "zf2"
             ],
-            "time": "2015-01-21 16:24:14"
+            "time": "2015-01-21T16:24:14+00:00"
         }
     ],
     "packages-dev": [

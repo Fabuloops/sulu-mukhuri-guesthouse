@@ -37,3 +37,7 @@ parameters:
     phpcr_user: admin
     phpcr_pass: admin
     phpcr_cache: file_system
+
+    # google_recaptcha
+    google_recaptcha_public_key: ~
+    google_recaptcha_private_key: ~

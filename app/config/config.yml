@@ -139,6 +139,10 @@ sulu_form:
         from: "%sulu_contact.email%"
         to:   "%sulu_contact.email%"
 
+ewz_recaptcha:
+    public_key:  "%google_recaptcha_public_key%"
+    private_key: "%google_recaptcha_private_key%"
+
 dubture_f_fmpeg:
     ffmpeg_binary: /usr/local/bin/ffmpeg # path to ffmpeg
     ffprobe_binary: /usr/local/bin/ffprobe # path to ffprobe
