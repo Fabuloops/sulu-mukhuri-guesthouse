@@ -142,6 +142,7 @@ sulu_form:
 ewz_recaptcha:
     public_key:  "%google_recaptcha_public_key%"
     private_key: "%google_recaptcha_private_key%"
+    locale_from_request: true
 
 dubture_f_fmpeg:
     ffmpeg_binary: /usr/local/bin/ffmpeg # path to ffmpeg
