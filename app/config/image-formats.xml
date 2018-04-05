@@ -25,6 +25,13 @@
         </meta>
         <scale x="640" y="480"/>
     </format>
+    <format key="900x">
+        <meta>
+            <title lang="en">Light Image</title>
+            <title lang="fr">Image légère</title>
+        </meta>
+        <scale x="900"/>
+    </format>
     <format key="50x50">
         <meta>
             <title lang="en">Small thumbnail</title>

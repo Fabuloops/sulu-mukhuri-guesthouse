@@ -19,7 +19,7 @@
         {% for block in content.blocks %}
             <div class="my-img-card">
                 {% if block.image is not empty %}
-                    <img src="{{ block.image[0].url }}" class="zoomImg" data-zoom-url="{{ block.image[0].url }}" alt="..."/>
+                    <img src="{{ block.image[0].formats['900x'] }}" class="zoomImg" data-zoom-url="{{ block.image[0].formats['900x'] }}" alt="..."/>
                 {% endif %}
                 {% if block.title is not empty %}
                     <h2>{{ block.title }}</h2>

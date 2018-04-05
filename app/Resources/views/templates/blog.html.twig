@@ -13,7 +13,7 @@
 {% block content %}
     {% for article in content.articles %}
         <section class="my-img-card">
-            <img src="{{ article.mainImage[0].url }}" alt="..."/>
+            <img src="{{ article.mainImage[0].formats['900x'] }}" alt="..."/>
             <a href="{{ sulu_content_path(article.url) }}">
                 <h1>{{ article.title }}</h1>
             </a>
